@@ -62,6 +62,10 @@ namespace Radler.Utils
 
                                     Vector v = new Vector(blockData.Item1, blockData.Item2, blockData.Item3);
 
+                                    v.X = v.X * xModel.Scale;
+                                    v.Y = v.Y * xModel.Scale;
+                                    v.Z = v.Z * xModel.Scale;
+
                                     // Z X Y order else rotation is wrong
                                     VectorUtil.RotateZ(v, xModel.Angles.Z, false);
                                     VectorUtil.RotateX(v, xModel.Angles.X, true);
@@ -84,12 +88,14 @@ namespace Radler.Utils
                                     {
                                         triangleVertCount = 0;
 
-                                        if (face != null)
+                                        // check why we don't always have correct count
+                                        if (face != null && face.Count() > 2)
                                         {
                                             // swap to fix normals
                                             string z = face[2];
                                             face[2] = face[1];
                                             face[1] = z;
+
 
                                             StringBuilder builder = new StringBuilder();
 
@@ -116,7 +122,7 @@ namespace Radler.Utils
                                 }
                             }
 
-                            streamWriter.WriteLine(string.Format("o {0}", xModel.Name));
+                            streamWriter.WriteLine(string.Format("g {0}", xModel.Name));
 
                             foreach (string vert in verts)
                             {

@@ -149,6 +149,8 @@ namespace Radler
                 obj.FilterTextures(MapMaterials.CaulkMaterials);
             }
 
+            //return;
+
             SaveUtil.CheckExportDir();
 
             _worker.ReportProgress(-1, new WorkerUserState(string.Format("Saving: {0}", System.IO.Path.GetFileNameWithoutExtension(file) + ".obj")));

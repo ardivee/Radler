@@ -148,6 +148,11 @@ namespace Radler.Models
                             foundModelInEntity = true;
                         }
 
+                        if (mapLine.Contains("\"classname\" \"script_model\"") && includeModels)
+                        {
+                            foundModelInEntity = true;
+                        }
+
                         entityLines.Add(mapLine);
                     }
 
@@ -271,6 +276,17 @@ namespace Radler.Models
                                         string[] a = cleanLine.Split(' ');
 
                                         xModel.Angles = new Vector(Double.Parse(a[0], System.Globalization.CultureInfo.InvariantCulture), Double.Parse(a[1], System.Globalization.CultureInfo.InvariantCulture), Double.Parse(a[2], System.Globalization.CultureInfo.InvariantCulture));
+                                    }
+
+                                    if( line.Contains("\"modelscale\""))
+                                    {
+                                        string cleanLine = line.Replace("\"modelscale\"", "");
+                                        cleanLine = cleanLine.Replace("\"", "");
+                                        cleanLine = cleanLine.TrimStart();
+
+                                        float scale = float.Parse(cleanLine);
+
+                                        xModel.Scale = scale;
                                     }
 
                                 }

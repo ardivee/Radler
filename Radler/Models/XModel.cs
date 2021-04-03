@@ -13,6 +13,8 @@ namespace Radler.Models
 
         public Vector Angles { get; set; }
 
+        public float Scale { get; set; }
+
         public string FilePath { get; set; }
 
         public XModel()
@@ -20,6 +22,7 @@ namespace Radler.Models
             Name = "";
             Origin = new Vector(0, 0, 0);
             Angles = new Vector(0, 0, 0);
+            Scale = 1.0f;
             FilePath = "";
         }
     }
