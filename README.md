@@ -1,7 +1,9 @@
 # Radler
 A CoD Map to Wavefront Obj Converter
 
-**NOTE:** Converting the models can take a long time, please be patient.
+This is made for people who want to make XCAM cinematics for their map, the model conversion is not 100% 1:1 it's close enough for now.
+
+**NOTE:** Converting the models can take a long time, please be patient. 
 
 ## Supported Games
 
@@ -10,7 +12,7 @@ A CoD Map to Wavefront Obj Converter
 | Call of Duty 2                 | Yes     | Yes     | No       | No      | No          |
 | Call of Duty 4: Modern Warfare | Yes     | Yes     | No       | No      | No          |
 | Call of Duty - World at War    | Yes     | Yes     | No       | No      | No          |
-| Call of Duty - Black Ops III   | Yes     | Yes     | No       | No      | Yes ( WIP ) |
+| Call of Duty - Black Ops III   | Yes     | Yes ( Terrain Patches )     | No       | No      | Yes ( WIP ) |
 
 ## Credits
 
